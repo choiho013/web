@@ -1,0 +1,71 @@
+@charset "UTF-8";
+    
+.table th, .table td {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 20%; /* 열 너비 고정 */
+    word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+}
+
+
+.text-center td a {
+    color: black; /* 기본 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    transition: color 0.3s ease; /* 색상 전환 효과 */
+}
+
+.text-center td a:hover {
+    color: #0056b3; /* hover 시 색상 변경 */
+    text-decoration: underline; /* hover 시 밑줄 추가 */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* relative로 설정해야 top이 동작 */
+    top: 0; /* 기본 위치에서 시작 */
+    margin-top: 100px; /* 카드 상단에 100px 여백 추가 */
+    height: auto; /* 카드 높이를 컨텐츠에 맞게 조정 */
+    max-height: 80vh; /* 최대 높이 설정 */
+    border: 1px solid #ddd; /* 테두리 스타일 */
+}
+
+.card {
+    position: relative !important;
+    top: 100px !important;
+    margin-top: 50px !important;
+}
+
+
+.card-body {
+    flex: 1;
+    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 */
+}
+.card-footer {
+    display: flex; /* Flexbox 컨테이너 설정 */
+    justify-content: center; /* 모든 자식을 중앙 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    background-color: #f8f9fa; /* 배경색 */
+    padding: 10px 0;
+    position: relative; /* indexer의 위치를 조정하기 위한 상대 위치 */
+}
+
+.pagination-container {
+    flex: none; /* 크기 자동 확장 방지 */
+    text-align: center; /* 내부 텍스트 중앙 정렬 */
+}
+.pagination {
+    margin: 0 auto; /* 가운데 정렬 */
+    display: inline-flex; /* 가로로 나열 */
+    list-style: none;
+    padding: 0;
+}
+.indexer {
+    position: absolute; /* indexer를 절대 위치로 배치 */
+    right: 15px; /* 오른쪽 끝에서 15px 여백 */
+    font-size: 14px;
+    color: #333;
+}
+
+.page-list{
+    color: orange;
+}

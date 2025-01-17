@@ -1,0 +1,133 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<style>
+
+html, body {
+    overflow-x: hidden; /* 수평 스크롤 방지 */
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0; /* 화면 상단에 배치 */
+    z-index: 1000; /* 다른 요소보다 위에 표시되도록 설정 */
+    width: 100%; /* 화면 너비에 맞춤 */
+    background-color: #F5F5F5; /* Success 색상 */
+    padding: 5px 5px; /* 내부 여백 추가 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 살짝 그림자 추가 */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Montserrat 폰트 지정 */
+    font-weight: bold;
+}
+
+header .nav-link {
+    color: #364c63; /* 링크 글씨 남색 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 0 10px; /* 링크 간격 추가 */
+}
+
+/* 모바일 네비게이션 토글 버튼 스타일 */
+.navbar-toggler {
+    background-color: white; /* 버튼 배경 흰색 */
+    border: none; /* 버튼 테두리 제거 */
+}
+/* 오프캔버스 배경 */
+.offcanvas {
+    background-color: #F5F5F5; /* Success 색상 */
+    color: #364c63; /* 글씨 남색 */
+}
+.offcanvas .nav-link:hover {
+    color: #f094a7; /* 핑크 색상 */
+    font-weight: bold;
+}
+
+.offcanvas .btn-close {
+/*     filter: invert(1); /* 아이콘 색상 반전 */ 
+    background-color: transparent; /* 배경 투명 */
+    border: none; /* 테두리 제거 */
+}
+.offcanvas .btn-close:hover {
+/*     filter: invert(1.2); /* 호버 시 약간 밝게 */
+    color: #f094a7;
+}
+
+#jspLogo {
+    width: 90px;
+    height: auto;
+    margin-right: 10px; /* 로고와 텍스트 사이 간격 */
+    margin-left: 10px;
+}
+
+.nav-link.nowrap {
+    white-space: nowrap; /* 줄바꿈 방지 */
+    overflow: hidden; /* 넘치는 텍스트 숨김 */
+    text-overflow: ellipsis; /* 넘치는 텍스트 생략(...) */
+}
+
+</style>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-white navbar-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- 로고 -->
+            <div class="d-flex align-items-center">
+                <c:url value="/static/image/sign_jsp.png" var="logoPath"/>
+                <c:url value="/" var="homePage" />
+                <a href="${homePage}">
+                    <img id="jspLogo" alt="LOGO_JSP" src="${logoPath}">
+                </a>
+            </div>
+
+            <!-- Offcanvas 토글 버튼 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Offcanvas 메뉴 -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title ms-2" id="offcanvasNavbarLabel">LIST</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <c:url value="/" var="homePage" />
+                        <a class="nav-link nowrap" href="${homePage}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <c:url value="/post/list" var="listPage" />
+                        <a class="nav-link nowrap" href="${listPage}">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <c:url value="/post/create" var="createPage" />
+                        <a class="nav-link nowrap" href="${createPage}">New Post</a>
+                    </li>
+                    <c:if test="${empty signedInUser}">
+                        <li class="nav-item">
+                            <c:url value="/user/signin" var="userSignInPage" />
+                            <a class="nav-link nowrap" href="${userSignInPage}">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <c:url value="/user/signup" var="userSignUpPage" />
+                            <a class="nav-link nowrap" href="${userSignUpPage}">Sign Up</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${not empty signedInUser}">
+                        <li class="nav-item">
+                            <c:url value="/user/signout" var="userSignOutPage" />
+                            <a class="nav-link nowrap" href="${userSignOutPage}">
+                                <span>${signedInUser}</span> Sign Out
+                            </a>
+                        </li>
+                    </c:if>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

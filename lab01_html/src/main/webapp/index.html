@@ -1,0 +1,82 @@
+<!DOCTYPE html> <!-- DTD(Document Type Declaration): 문서 종류 선언 -->
+
+ 
+<!--  트리구조로 나타내는게 DOM 구조 -->
+<html> <!-- 특별한 경우가 아니라면문서의 종류가 html 파일이고 html로 시작하고 html로 끝남 -->
+
+    <!-- head: 웹페이지 설정. 인코딩, 타이틀, CSS, JavaScript, ... 설정. -->
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lab01</title> <!-- 시작과 끝을 나타내기위해 끝에 슬래쉬를 붙히고
+        태그라고 말함. 대부분의 태그들을 사이에 다른것들을 넣을 수 있고 분리하게 되고 슬래쉬로 구분 
+        특별한 종류의 태그들은 시작과 종료가없어서 컨텐트를 넣는게 없음
+        사이에 들어가는게 없는데 권장사항은 / 를 넣는게 권장사항-->
+    </head>
+    
+    <!-- body: 브라우저 화면에서 보여지는 부분. -->
+    <body>
+        <!--  태그들을 배우는 것 -->
+
+        <!-- heading 태그: h1 ~ h6. 문서 제목. --> <!-- 제목을 달아주는데 그 밑에 소제목 느낌 -->
+        <h1>인덱스 페이지</h1>
+        <h2>안녕하세요, 호철!</h2>
+        
+        <!-- anchor(링크, 앵커) -->
+        <a href= "http://www.daum.net">다음</a>
+        <a href= "http://www.naver.com">네이버</a>
+        
+        <!-- 리스트 -->
+        <ul>
+            <li>
+                <a href="section.html">Section Tag</a> 
+                <!-- 그 폴더위치에 있는 파일을 찾을때에는 파일 이름만 적으면됨. -->
+            </li>        
+            <li>
+            <a href = "image.html">이미지 </a>
+            </li>
+            <li>
+                <a href="list.html">리스트</a>
+            </li>
+            
+            <li>
+                <a href= "table.html">테이블</a>
+            </li>
+            <li>
+                <a href="form.html">폼 양식1</a>
+            </li>
+        </ul>
+    </body>
+</html>
+
+<!--웹페이지를 만들때 사용되는 언어
+HTML(Hyoer-text Markup Language)
+    - HTML 요소(element): 태그(tag), 속성(attribute), 컨텐트(content)
+    - HTML 문법: 
+      o. <tga attr_name="value1" att2_name="value2" ...>content</tag>
+      o. <tag attr_name="value" .../>
+    - HTML 태그 이름들은 대/소문자를 구분하지 않지만, 소문자로만 작성하는 것을 권장.
+    - 태그의 속성 값을 설정할 때는 큰따옴표("")와 작은따옴표('')를 모두 사용할 수 있음.
+    - HTML 요소:
+      o. block 요소:
+            자동으로 줄바꿈이 되는 요소. 다른 요소의 아래쪽에 배치되는 요소.
+            가로(width), 세로(height) 크기를 설정할 수 있는 요소. 
+            (예) h1, h2, div, ul, li, form, table, ...
+      o. inline요소:
+            자동으로 줄바꿈이 되지 않는 요소. 다른 요소의 오른쪽에 배치되는 요소.
+            가로, 세로 크기를 설정할 수 없는 요소.
+            (예) a, span, ...
+      o. inline-block 요소:  
+            다른 요소의 오른쪽에 배치되는 요소.
+            가로, 세로 크기를 설정할 수 있는 요소.
+            (예) img
+
+
+시작태그와 종료사이에 있는걸 content 라고도하고 자식요소라고도한다
+컨텐트가 있으면 종료태그를 반드시 </태그> 
+없으면 알려주기만 하면된다
+
+시작했으면 끝났다는걸 알려줘야함!!
+속성이 여러개일 수 있는데 구분하는건 공백하나로 구분
+ -->
+
+    

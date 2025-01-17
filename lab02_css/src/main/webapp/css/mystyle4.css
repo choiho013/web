@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+
+/* #backSlide 설정 */
+body{
+	background-color: white;
+}
+
+main{
+	padding: 10px;
+}
+
+#top{
+	background-color: Tan;
+	border-radius: 32px;
+	color: white;
+	padding: 15px;
+	
+}
+.clothes{
+	position: relative; /* 요소들을 배치하는 위치 */
+	overflow: auto;
+}
+#menu_bar{
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	padding-top: 20px;
+    margin: 0;
+    float: left;
+}
+
+#menu_list{
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+.menu_item{
+	list-style-type: none;
+	background-color: white;
+	text-align: left;
+	padding: 4px;
+
+
+
+}
+.mylink {
+	color: black;
+	text-decoration: none;
+	margin-bottom: 5px;
+	padding: 3px;
+	font-size: 20px;
+}
+
+.mylink:hover{
+    color: blue;
+}
+
+.mylink:active{
+	color: red;
+}
+
+
+article {
+	border: 1px solid lightgray;
+	border-radius: 8px;
+	margin: 8px;
+	padding: 20px;
+	float: Left;
+	width: 80%;
+}
+
+
+#backSlide {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between; /* 자식 요소들 사이에 일정한 간격을 추가 */
+	width: 100%;
+	object-fit: cover;
+	box-sizing: border-box;
+
+}
+
+.image-text{
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	margin: 5px;
+	width: 300px;
+	
+	
+}
+/* 링크 스타일 */
+.image-text a{
+	text-decoration: none;
+	color: #000000;
+	font-size: 18px;
+	padding: 5px;
+	margin: 3px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 24px;
+	display: inline-block;
+}	
+
+
+.image-text a:hover {
+	background-color: Gray;
+}
+
+.image-text > img{
+	width: 100%;
+	height:auto;
+	border-radius: 32px;
+	border: 2px solid white;
+}
+
+
+#bottom {
+    bottom: 0; /* 페이지 하단에 고정 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%; /* 너비를 화면에 맞게 */
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+    font-size: 80%;
+    color: gray;
+}
+
+.menu_image{
+	width: 100px;
+	height: 100%;
+	margin: 0 auto;
+	margin-Left: 10px;
+	
+	
+}	

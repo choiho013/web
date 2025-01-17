@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+    <!-- 영속성 프레임워크(Persistence Framework) MyBatis의 환경 설정 파일 -->
+    
+    <settings>
+        <!-- 데이터 베이스에 언더 스코어 
+            테이블에 언더스코어는 카멜 표기법으로 표시 하겠다는 말 
+            자동으로 변환 해준다-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/> 
+    </settings>
+    
+    <typeAliases>
+        <typeAlias type="com.itwill.spring2.domain.Post" alias="Post"/>
+        <typeAlias type="com.itwill.spring2.domain.Comment" alias="Comment"/>
+        <typeAlias type="com.itwill.spring2.domain.Member" alias="Member"/>
+    </typeAliases>
+    
+</configuration>

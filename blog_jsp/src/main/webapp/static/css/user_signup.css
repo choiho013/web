@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+html, body {
+    height: 100%; /* 화면 전체 높이 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    overflow: hidden; /* 스크롤바 제거 */
+    background-color: #F5F5F5; /* 배경색 */
+}
+
+/* 중앙 정렬 */
+.form_content { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 폼 섹션 스타일 */
+.form_section {
+    width: 460px; /* 폼의 고정 너비 */
+    margin-top: 30px;
+    background-color: #fff; /* 배경 흰색 */
+}
+
+#jspLogo{
+    width: 90px;
+    height: auto;
+    margin-left: 5px;
+}
+
+/* 버튼 설정*/
+.btn{
+    width: 460px;
+    height: 50px;
+    margin-top: 50px;
+}
+
+/* 공통 입력 필드 */  
+.form_itme {
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none; /* 개별 테두리 제거 */
+    box-sizing: border-box;
+    background-color: #fff; /* 기본 배경색 */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form_logo {
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 조정 가능 */
+    top: -20px; /* 위로 이동 */
+}
+
+/* 입력 필드 전체 컨테이너 */
+div.form_list {
+    width: 460px; /* 전체 폼 너비 */
+    margin: 10px auto;
+    background-color: #fff;
+    border: 1px solid #ddd; /* 약한 1px 테두리 */
+    border-radius: 8px; /* 전체 둥근 모서리 */
+    overflow: hidden; /* 테두리 밖 내용 숨김 */
+}
+
+/* 비밀번호, 생일 상하 테두리 */
+.form_password .form_itme,
+.form_birthday .form_itme {
+    border-top: 1px solid #ddd; /* 위쪽 테두리 추가 */
+    border-bottom: 1px solid #ddd; /* 아래쪽 테두리 추가 */
+}
+
+
+
+/* 상단 필드 (아이디, 이름) */
+ .form_user .form_itme ,
+ .form_name .form_itme {
+    border-top-left-radius: 8px; /* 상단 왼쪽 라운드 */
+    border-top-right-radius: 8px; /* 상단 오른쪽 라운드 */
+}
+
+
+/* 중간 필드 (비밀번호, 생일) */
+.form_birthday .form_itme,
+.form_password .form_itme {
+    border-radius: 0; /* 중간 필드는 라운드 없음 */
+    border-top: 1px solid #ddd; /* 위쪽 테두리 추가 */
+    border-bottom: 1px solid #ddd; /* 아래쪽 테두리 추가 */
+}
+
+/* 하단 필드 (이메일, 번호) */
+.form_email .form_itme,
+.form_phone .form_itme {
+    border-bottom-left-radius: 8px; /* 하단 왼쪽 라운드 */
+    border-bottom-right-radius: 8px; /* 하단 오른쪽 라운드 */
+}
+
+
+/* 포커스 시 효과 */
+.form_itme:focus {
+    border: 2px solid #0ac5a8; /* 선택 시 빨간색 테두리 */
+    background-color: #f5f5f5; /* 포커스 시 배경 강조 */
+    outline: none; /* 기본 아웃라인 제거 */
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+.error-message {
+    color: red; /* 에러 메시지 색상 */
+    font-size: 12px; /* 에러 메시지 크기 */
+    display: none; /* 기본적으로 숨김 처리 */
+}
+.error_text {
+    color: red; /* 에러 메시지 색상 */
+    font-size: 0.875rem; /* 에러 메시지 폰트 크기 */
+    margin-top: 0.25rem; /* 에러 메시지와 입력 필드 간의 여백 */
+}
+
+.form_itme.invalid {
+    border: 2px solid red; /* 에러 상태의 빨간 테두리 */
+    outline: none; /* 기본 브라우저 아웃라인 제거 */
+}

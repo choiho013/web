@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        
+        
+		<title>Lab02 CSS</title>
+
+<!-- CSS는 제일 나중에 적용된 것이 적용이 된다. 
+     전체 외부로 먼저 적용하고 그 다음 내부로 바꾸고 싶은것만 바꾸는게 일반적으로 사용하는 방법 -->
+        
+        <!-- 외부 CSS 파일 링크 -->
+        <link rel="stylesheet" href="css/mystyle.css"/>
+        
+        <!-- 내부 CSS 작성 -->
+        <style>
+            div{
+                border:1px dotted red;
+            }
+        </style>
+        <!-- 외부 CSS 다음에 내부 CSS를 작성한 경우에는 나중에 설정된 값이 적용됨. -->
+        
+	</head>
+	<body>
+    
+<!-- 메인이라는 의미만 갖고있는 -->
+		<main> <!-- 웹 페이지의 주요 영역(main devision)라는 의미를 갖는 태그. -->
+            <section> <!-- 웹 페이지의 섹션 영역(section division)이라는 의미를 갖는 태그. -->
+                <h1 style="color:white">CSS</h1>
+                <h2 style="color:white">Cascading Style Sheet</h2>
+                
+                <!-- 모든 div에 똑같은 설정을 지정해줌. -->
+                <div style="color:white">Division 1</div>
+                <div style="color:white">Division 2</div>
+                <div style = "color:white" "border: 1px dashed blue">Division 3</div>
+                
+            </section>
+            
+            <!-- 선택자가 중요 -->
+            <section>
+                <h2 style="color:white">목차</h2>
+                <ul>
+                    <li>
+                        <a href="selector1.html">선택자 1</a>
+                    </li>
+                    <li>
+                        <a href="selector2.html"">선택자 2</a>
+                    </li>
+                    <li>
+                        <a href="link.html">가상 선택자</a>
+                    </li>
+                    <li>
+                        <a href="table.html">테이블</a>
+                    </li>
+                    <li>
+                        <a href="example.html">CSS example</a>
+                    </li>
+                    <li>
+                        <a href="myhtml.html">myhtml</a>                        
+                    </li>
+                    <li>
+                        <a href="bootstrap.html">Bootstrap 설정</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+	</body>
+</html>
+
+<!-- 
+Front-End 개발 언어:
+1. HTML: 웹 페이지의 정적 컨텐츠(링크, 이미지, 테이블, 폼, 리스트, ...)들을 작성하는 언어
+2. CSS: 웹 페이지의 스타일(요소 배치, 색상, 모양, 크기, ...)들을 작성하는 언어.
+3. JavaScript: 웹 페이지의 동적 변화, 이벤트 처리, 서버와 통신 등과 같은 기능을 구현하는 언어.
+   **중요: 브라우저에서 실행되는 프로그래밍 언어. 노드js가 서버에서 해주기도 하는데  일반적으로 브라우저에서 실행.
+   
+CSS 적용 방법:
+1. 외부(external) CSS: 별도의 css 파일에서 작성된 내용을 html 파일에서 링크해서 사용.
+2. 내부(internal) CSS: HTML 파일의 <script> 태그 안에서 스타일을 작성.
+3. inline CSS: 각각의 HTML 태그 요소 안에서 style 속성(attribute) 값을 작성.
+-->

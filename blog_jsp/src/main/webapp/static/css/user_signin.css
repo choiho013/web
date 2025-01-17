@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+html, body {
+    height: 100%; /* 화면 전체 높이 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    overflow: hidden; /* 스크롤바 제거 */
+    background-color: #F5F5F5; /* 배경색 */
+}
+
+div.form_header {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img#signInJspLogo{
+    margin-top: 50px;
+    width: 120px;
+}
+
+/* 중앙 정렬 */
+.form_content { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 폼 섹션 스타일 */
+.form_section {
+    width: 430px; /* 폼의 고정 너비 */
+    margin-top: 20px;
+    background-color: #fff; /* 배경 흰색 */
+}
+
+/* 공통 입력 필드 */  
+.form_itme {
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none; /* 개별 테두리 제거 */
+    box-sizing: border-box;
+    background-color: #fff; /* 기본 배경색 */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input#btnSignIn{
+    margin-top: 30px;
+    padding: 10px;
+}
+
+/* 입력 필드 전체 컨테이너 */
+div.form_list {
+    width: auto; /* 전체 폼 너비 */
+    margin: 10px auto;
+    background-color: #fff;
+    border: 1px solid #ddd; /* 약한 1px 테두리 */
+    border-radius: 8px; /* 전체 둥근 모서리 */
+    overflow: hidden; /* 테두리 밖 내용 숨김 */
+}
+
+
+/* 상단 필드 (아이디, 이름) */
+input#username {
+    border-top-left-radius: 8px; /* 상단 왼쪽 라운드 */
+    border-top-right-radius: 8px; /* 상단 오른쪽 라운드 */
+    border-bottom: 1px solid #ddd; /* 아래쪽 테두리 추가 */
+}
+
+/* 하단 필드 (이메일, 번호) */
+input#password {
+    border-bottom-left-radius: 8px; /* 하단 왼쪽 라운드 */
+    border-bottom-right-radius: 8px; /* 하단 오른쪽 라운드 */
+    border-top: 1px solid #ddd; /* 위쪽 테두리 추가 */
+}
+
+/* 포커스 시 효과 */
+.form_itme:focus {
+    border: 2px solid #0ac5a8 !important; /* 선택 시 강조 라인 */ 
+    background-color: #f5f5f5; /* 포커스 시 배경 강조 */
+    outline: none; /* 기본 아웃라인 제거 */
+}
+
+.form_signup {
+    margin-top:20px;
+    text-align:center;
+    display: block; /* 블록 요소로 변경 */
+}
+
+#signUpPage{
+    font-size: 13px;
+    color: gray;
+    text-decoration: none;
+}

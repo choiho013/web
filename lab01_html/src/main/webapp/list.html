@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lab01</title>
+	</head>
+	<body>
+		<a href="index.html">인덱스 페이지</a>
+        
+        <h1>HTML 리스트</h1>
+        
+        <h2>순서가 없는 리스트(unordered list)</h2>
+        <ul style="list-style: circle;">
+            <!-- ul 태그의 style 속성 중에서 list-style의 기본값은 disc. 
+             list-style 특성 값을 none을 설정하면 bullet 이미지가 사라짐.-->
+        
+        
+        
+            <!-- 리스트 아이템(list item) -->
+            <li>1승</li>
+            <li>모아나2</li>
+            <li>소방관</li>
+            <li>위키드</li>
+        </ul>
+            
+            <hr>
+            <ul style="list-style: circle;">
+                <li> 
+                    한국영화
+                </li>
+                    <ul style="list-style: square;">
+                        <li>1승</li>
+                        <li>소방관</li>
+                    </ul>
+            </ul>
+                    
+            <ul style="list-style: circle;">
+                <li> 
+                    외국영화
+                </li>
+                <ul style="list-style: square;">
+                    <li>모아나2</li>
+                    <li>위키드</li>
+                </ul>
+            </ul>
+            
+            
+            <h2>순서가 있는 리스트(ordered list)</h2>
+            
+            <ol style="list-style: lower-alpha;">
+                <!--  ol 태크의 style 속성 중에서 list-style의 기본값은 decimal(숫자) -->
+                <li>1승</li>
+                <li>모아나2</li>
+                <li>소방관</li>
+                <li>위키드</li>
+            </ol>
+            
+            <h2>사전식 리스트(description list)</h2>
+            <!-- 용어(term)와 정의/설명(defintion)을 갖는 리스트  -->
+            <dl>
+                <dt>HTML</dt>
+                <dd>Hyper-Tex Markup Language</dd>
+                <dd>웹 페이지의 정적 컨텐츠 작성하는 프론트엔드 개발 언어</dd>
+                
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheet</dd>
+                <dd>웹 페이지의 스타일을 작성하는 프론트엔드 개발 언어</dd>
+                
+                <dt>JavaScript</dt>
+                <dd>ECMAScript (European Computer Manufacturer Association) Script</dd>
+                <dd>웹 페이지의 동적인 기능, 이벤트 처리 등을 담당하는 프론트엔드 개발 언어</dd>
+                
+            </dl>
+	</body>
+</html>

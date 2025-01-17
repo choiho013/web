@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="https://logging.apache.org/xml/ns"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://logging.apache.org/xml/ns https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+    <!-- Log4j 라이브러리의 환경 설정 파일. -->
+    
+    
+    <Appenders>
+        <!-- 로그를 출력/저장하는 위치(방법): Console, File -->
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%40.40c:(%3L)] %m%n" />  
+            <!--  
+             로그 패턴
+             o. %d, %date: 로그 출력 날짜/시간.
+             o. %p, %level: 로그 레벨(priority 심각성 우선순위). trace < debug < info < warn < error < fatal
+             o. %c, %logger: 로그 출력 객체(class).
+             o. %m, %message: 로그 메시지.
+             o. %n: 줄바꿈(new line).
+             o. %L, %line: 로그를 출력하는 소스 코드의 줄 번호.
+              
+             -->
+                <!-- %-5p 의 - 는 왼쪽에 붙히고 5글자 -40.40 40글자가 넘는경우 40글자까지만 보여주겠다
+                로그를 출력한 클래스이름은 로거에게 클래스를 줬기 때문에 클래스 이름이 보임 
+                %d 날짜 %m 은 메세지 %n은 줄바꿈-->          
+            
+        
+        </Console>
+    </Appenders>
+    
+    <Loggers>
+        <!-- 로그를 출력/저장할 모듈(패키지), 로그 레벨 설정 -->
+        <Root level="DEBUG" additivity="false">
+            <AppenderRef ref="CONSOLE" />
+        </Root> 
+        <!--  이름이 name으로 시작하면 레벨을 info로 설정하겠다. -->
+        <Logger name="com.zaxxer.hikari" level="info" additivity="false"> 
+            <AppenderRef ref="CONSOLE" />
+        </Logger>
+        <!-- 실제 커넥션이 히카리에 들어갔고  -->
+    </Loggers>
+</Configuration>
+

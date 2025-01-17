@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%
+    HttpSession session2 = request.getSession(false);
+    if (session != null) {
+        String alertMessage = (String) session.getAttribute("alertMessage");
+        Integer currentPoints = (Integer) session.getAttribute("currentPoints");
+        Integer pointAdded = (Integer) session.getAttribute("pointAdded");
+
+        if (alertMessage != null) {
+%>
+            <script>
+                alert("<%= alertMessage %>\n현재 포인트: <%= currentPoints %>\n추가된 포인트: <%= pointAdded %>");
+            </script>
+<%
+            session.removeAttribute("alertMessage");
+            session.removeAttribute("currentPoints");
+            session.removeAttribute("pointAdded");
+        }
+    }
+%>

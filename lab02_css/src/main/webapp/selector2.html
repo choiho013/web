@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lab02 CSS</title>
+        
+        <style>
+            /* 모든 section 요소들에 테두리선관 마진을 설정*/
+            section {
+                border: 2px solid DarkGray;
+                margin: 16px;
+            }
+            
+            /* 스타일을 적용할 요소들을 나열 - CSS 선택자들을 쉼표(,)로 구분 */
+            /* (1) section 중에서 아이디가 sect1인 요소, (2) p 태그 요소 */
+            section#sect1, p{
+                border: 4px solid DarkGreen;
+                margin: 16px;
+            }
+            
+            
+            /*
+                자식(child), 자손(descendent) 요소를 선택자:
+                (1) child element: HTML 문서 구조에서 바로 아래에 있는 요소들.
+                    parent-selector > child-selector
+                (2) descendent element: HTML 문서 구조에서 아래에 있는 모든 요소들.
+                    ancestor-selector descendent-selector
+            */
+            /* 아이디가 sect2인 section 태그 요소의 자식(child) p 요소들 */
+            section#sect2 > p {
+                color: crimson;
+                border: 1px solid black;
+            }
+            
+            /* 아이디가 sect3인 setction 태그 요소의 자손(descendent) p 요소들 */
+            section#sect3 p{
+                color : DodgerBlue;
+                border: 1px solid black;
+            }
+            
+            /* > 바로 밑에 하나 , 쉼표는 나열 , 공백은 자손들 */ 
+            
+        </style>
+	</head>
+	<body>
+	   <nav>
+            <a href="index.html">인덱스 페이지</a>
+        </nav>        
+        <main>
+            <h1>CSS Selector 2</h1>
+
+        <section id="sect1">
+                <p>Section 1, Paragraph 2</p>
+                <p>Section 1, Paragraph 2</p>
+                <article>
+                    <!-- 기사 영역(article division) div와 똑같은데 의미를 갖고있는것 -->
+                <p>Section 1, Article, Paragraph</p>
+            </article>
+        </section>
+
+        <section id="sect2">
+            <p>Section 2, Paragraph 2</p>
+            <p>Section 2, Paragraph 2</p>
+            <article>
+                <!-- 기사 영역(article division) div와 똑같은데 의미를 갖고있는것 -->
+                <p>Section 2, Article, Paragraph</p>
+            </article>
+        </section>
+        
+        <section id="sect3">
+            <p>Section 3, Paragraph 2</p>
+            <p>Section 3, Paragraph 2</p>
+            <article>
+                <!-- 기사 영역(article division) div와 똑같은데 의미를 갖고있는것 -->
+                <p>Section 3, Article, Paragraph</p>
+            </article>
+            
+            
+        </section>
+    </main>
+	</body>
+</html>

@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+
+div#header{
+    height: 200px;
+    width: 100%; /* 화면 너비에 맞춤 */
+    background: linear-gradient(to bottom, rgba(54, 76, 99, 0.1), transparent);
+
+}
+
+/* 중간 영역 */
+.middle {
+    height: 500px; /* 중간 여백의 높이 */
+    background-color: transparent; /* 필요에 따라 색상을 지정 가능 */
+}
+
+img#wallpaper {
+    width: 90%; /* 컨테이너 너비 (이미지 크기와 일치) */
+    height: auto; /* 비율 유지 */
+    display: block; /* 레이아웃 깨짐 방지 */
+    z-index: 1;
+    border: 6px solid #1A2B6D;
+}
+
+
+
+section#homebody {
+    background-color: rgb(230, 230, 230);
+    height: 1200px;
+    
+}
+div.ret{
+    display: flex;
+    position: fixed;
+    flex-direction: column; /* 아이템을 수직으로 정렬 */
+    align-items: center; /* 수직 정렬된 아이템을 중앙에 정렬 */
+    bottom: 10vh; /* 화면 높이에 비례하여 설정 */
+    right: 2vw;  /* 화면 너비에 비례하여 설정 */
+    transform: translate(0, 50%); /* 정확한 정렬 보정 */
+    height: auto;
+    pointer-events: none;
+    z-index: 2;
+}
+
+img.github{
+    filter: invert(1);
+    width: 60px;
+    height: 60px;
+    pointer-events: auto; /* 클릭 가능하도록 설정 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: transform 0.3s ease; /* 호버 효과 */
+}
+
+img.InstagramIG{
+    width: 60px;
+    height: 60px;
+    pointer-events: auto; /* 클릭 가능하도록 설정 */
+}
+
+
+
+
+
+
+/* 부모 컨테이너 정렬 및 카드 간격 설정 */
+.card-container {
+    display: flex; /* 플렉스 레이아웃 적용 */
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+    justify-content: center; /* 가로 방향으로 중앙 정렬 */
+    align-items: center; /* 세로 방향으로 중앙 정렬 */
+    gap: 20px; /* 카드 간격 */
+    margin: 0 auto; /* 좌우 여백을 없애고 중앙 정렬 */
+    padding: 0; /* 내부 여백 제거 */
+    position: relative; /* 기준점 설정 */
+    height: 100%; /* 컨테이너 높이 */
+}
+
+.card {
+    width: calc(20% - 20px); /* 카드 너비를 균등하게 설정 (4개 기준) */
+    max-width: 500px; /* 최대 너비 제한 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    border: 1px solid #ddd; /* 테두리 */
+    border-radius: 8px; /* 카드 모서리 둥글게 */
+    overflow: hidden; /* 내용 넘침 방지 */
+    background-color: #fff; /* 카드 배경색 */
+    transition: transform 0.3s ease;
+}
+
+/* 이미지 크기 동일하게 설정 */
+.card img {
+    width: 100%; /* 카드의 너비에 맞게 이미지 설정 */
+    height: 200px; /* 고정된 높이 설정 */
+    object-fit: cover; /* 비율 유지하며 이미지 채우기 */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1); /* 크기를 1.1배 확대 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 강화 */
+}
+
+div.lines {
+    position: absolute;
+    left: 0 ;
+    right: 0 ;
+    width: 100% ;
+    height: 500px;
+    background-color: #1A2B6D;
+    top: -50%; /* 상단에 정확히 붙임 */
+    z-index: -1;
+    pointer-events: none;
+}
+
+.lines-text {
+    position: relative; /* 위치 조정 가능하도록 설정 */
+    top: 15%; 
+    left: 40%; /* 부모 요소 기준으로 50% 오른쪽으로 이동 */
+    transform: translateX(-20%); /* 중앙에서 약간 왼쪽으로 조정 */
+    width: 80%; /* 텍스트 블록의 너비 */
+    color: #fff; /* 텍스트 색상 */
+}
+
+.lines-text span {
+    font-size: 100px;
+}
+
+.modal {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%; /* 전체 화면 너비 */
+    height: 100%; /* 전체 화면 높이 */
+    background-color: rgba(0, 0, 0, 0.8); /* 검은 배경, 투명도 80% */
+    justify-content: center; /* 가로 방향으로 중앙 정렬 */
+    align-items: center; /* 세로 방향으로 중앙 정렬 */
+    z-index: 1000;
+    
+}
+
+img.modalcontent{
+    margin:auto;
+    display: block;
+    width:  auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    border-radius: 10px;
+
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* 끝 영역 */
+.footer {
+    height: 200px; /* 중간 여백의 높이 */
+    background-color: transparent; /* 필요에 따라 색상을 지정 가능 */
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+
+div.footer-container{
+    background-color: #1A2B6D;
+    width: auto;
+    height: 200px;
+}
+
+
+@media (max-width: 1460px) {
+    .imgline {
+        max-width: 90%; /* 작은 화면에서 너비를 줄임 */
+    }
+}
+
+
+@media (max-width: 1460px) {
+    .imgline {
+        max-width: 90%; /* 작은 화면에서 너비를 줄임 */
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    
+}
+@media screen and (max-width: 800px) {
+    
+}
+@media screen and (max-width: 400px) {
+    
+}

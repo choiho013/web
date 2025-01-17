@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>lab04_jsp</display-name>
+  
+  <!-- contact path로 요청이 왔을 때 응답으로 보낼 파일 -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- namespace 이름 공간 -->
+  
+  <!-- 필터 클래스, 필터 URL 매핑 설정 
+       web.xml에서 filter가 선언된 순서대로 필터 체인(filter chain)이 만들어짐.
+       @WebFilter 애너테이션은 필터 체인의 순서를 설정할 수 없음. 
+  -->
+    <filter>
+        <filter-name>firstFilter</filter-name>
+        <filter-class>com.itwill.jsp1.filter.FirstFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>firstFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>secondFilter</filter-name>
+        <filter-class>com.itwill.jsp1.filter.SecondFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>secondFilter</filter-name>
+        <url-pattern>/ex1</url-pattern>
+        <url-pattern>/ex2</url-pattern>
+    </filter-mapping>
+
+    
+  <!-- 필터 체인은 필터들을 연결한것을 필터체인 첫번째ㅡ 두번째 순서에따라 실행되는 코드 순서가
+  달라짐. 그래서 필터들을 묶어주는 필터체인을 어떤 순서로 할건지가 중요 그 순서는 xml에 있는 순서대로 적용
+  필터는 체인이 중요해서 순서를 적용하려면 애너테이션으로는 힘들기 때문에 필터는 web.xml 
+  순서를 잘 해야함 그래야 내가 원하는 순서로 작성해야함.-->
+    
+    <!-- 리스너 설정 -->
+    <listener>
+        <listener-class>com.itwill.jsp1.listener.ListenerExample</listener-class>
+    </listener>
+    
+    
+  
+  <!-- 서블릿 클래스, 서블릿 URL 매핑 설정 -->
+  <servlet>
+        <servlet-name>firstServelt</servlet-name>
+        <servlet-class>com.itwill.jsp1.FirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>firstServelt</servlet-name>
+        <url-pattern>/ex1</url-pattern>
+  </servlet-mapping>
+</web-app>
